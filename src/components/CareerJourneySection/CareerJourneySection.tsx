@@ -4,6 +4,41 @@ import clsx from 'clsx';
 import { Journey } from './Journey';
 import { Section } from '../Section';
 
+const careerJourney = [
+  {
+    title: 'Lead Instructor',
+    companyName: 'Hacktiv8',
+    dateFrom: 'Nov 2023',
+    dateTo: 'Oct 2024',
+    description: [
+      'Mentored 6 - 8 instructors and improved teaching delivery.',
+      'Managed course schedules and standardized grading.',
+      'Increased student graduation rate by 20%.',
+    ],
+  },
+  {
+    title: 'Fullstack Javascript Instructor',
+    companyName: 'Hacktiv8',
+    dateFrom: 'Nov 2020',
+    dateTo: 'Oct 2023',
+    description: [
+      'Delivered live/recorded sessions on JavaScript, React.js, Node.js.',
+      'Designed a full stack curriculum and project-based assessments.',
+      'Improved student success rate by 30%.',
+    ],
+  },
+  {
+    title: 'Academic Instructor',
+    companyName: 'MSIB Campus Merdeka',
+    dateFrom: 'Feb 2024',
+    dateTo: 'Jul 2024',
+    description: [
+      'Supervised interns with regular performance reviews.',
+      'Achieved 100% intern task completion and growth feedback.',
+    ],
+  },
+];
+
 export const CareerJourneySection: React.FC = () => {
   return (
     <Section
@@ -13,18 +48,17 @@ export const CareerJourneySection: React.FC = () => {
       className={clsx(styles.journeyWrapper, 'container')}
     >
       <Journey>
-        {new Array(3).fill(null).map((_, index) => (
+        {careerJourney.map((career, index) => (
           <Journey.Item
-            title='Fullstack Developer Internship'
-            companyName='Binar Academy'
-            dateFrom='2023'
-            dateTo='2023'
+            title={career.title}
+            companyName={career.companyName}
+            dateFrom={career.dateFrom}
+            dateTo={career.dateTo}
             key={`${index}-item`}
           >
-            {new Array(4).fill(null).map((_, index) => (
+            {career.description.map((desc, index) => (
               <Journey.Description key={`${index}-item`}>
-                Developed and maintained responsive web applications, improving
-                load times by 30% through performance optimization.
+                {desc}
               </Journey.Description>
             ))}
           </Journey.Item>

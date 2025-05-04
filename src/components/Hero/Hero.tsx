@@ -37,7 +37,7 @@ export const Hero: React.FC = () => {
         <div className={styles.overflowWrapper}>
           <div className={styles.container}>
             {/* Label */}
-            <div className={styles.label}>👨🏻 Alex&apos;s Portfolio</div>
+            <div className={styles.label}>👨🏻 Rudy&apos;s Portfolio</div>
 
             {/* Title */}
             <h1 className={styles.title}>
@@ -71,9 +71,7 @@ export const Hero: React.FC = () => {
 
             {/* Description */}
             <p className={styles.description}>
-              I am a Front-End Developer who loves to create beautiful and
-              functional websites. I am also a tech enthusiast who loves to
-              learn new things.
+              Hi, I’m Rudy, a passionate web developer with over 4 years of experience in creating responsive websites. I also teach aspiring developers to master modern web programming and bring their ideas to life.
             </p>
 
             {/* CTA Button */}

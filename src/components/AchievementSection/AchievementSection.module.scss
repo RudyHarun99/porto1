@@ -4,6 +4,7 @@
   justify-content: space-between;
   gap: rem-calc(12);
   margin: rem-calc(40) 0;
+  // padding: get-spacing('spacing-8xl') get-spacing('spacing-11xl');
 
   @include md {
     margin: rem-calc(80) 0;

@@ -1,111 +1,3 @@
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: get-spacing('spacing-2xl');
-
-  &::before {
-    content: '';
-    background-image: url('../../assets/header-ellipse-decoration.svg');
-    position: absolute;
-    background-repeat: no-repeat;
-    background-size: contain;
-    width: rem-calc(1190);
-    height: rem-calc(1624);
-    transform: translateX(46%);
-    top: rem-calc(-125);
-  }
-}
-.highlight {
-  .box {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    margin: 0.25rem 0;
-    @include typography('display-xl', 'bold');
-    color: get-color('neutral', 100); // Warna teks tetap terlihat
-    border-radius: 8px;
-    text-align: center;
-    position: relative;
-    z-index: 1; // Pastikan teks berada di atas elemen lainnya
-
-    // Border gradien tanpa latar belakang
-    border: 2px solid transparent; // Border default
-    border-image: linear-gradient(to right, #e96cf3, #8746eb) 1; // Border gradien
-
-    background-origin: border-box;
-    background-clip: border-box; // Gradien hanya pada border
-    background-color: transparent; // Latar belakang tetap transparan
-
-    // Kotak kecil di pojok kiri atas
-    &::before, // Kotak kiri atas
-    &::after, // Kotak kanan bawah
-    .corner-top-left, // Kotak kanan atas
-    .corner-bottom-left, // Kotak kiri bawah
-    .corner-top-right, // Kotak kanan atas
-    .corner-bottom-right {
-      // Kotak kanan bawah
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: white; // Warna kotak kecil
-      border-radius: 4px; // Agar kotaknya melengkung
-      z-index: -1; // Kotak kecil berada di belakang teks
-    }
-
-    // Kotak kiri atas
-    &::before {
-      top: -5px;
-      left: -5px;
-    }
-
-    // Kotak kanan bawah
-    &::after {
-      bottom: -5px;
-      right: -5px;
-    }
-
-    .cornerTopRight,
-    .cornerBottomLeft {
-      content: '';
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background-color: white;
-      border-radius: 4px;
-    }
-
-    // Pojok kanan atas
-    .cornerTopRight {
-      top: -5px;
-      right: -5px;
-    }
-
-    // Pojok kiri bawah
-    .cornerBottomLeft {
-      bottom: -5px;
-      left: -5px;
-    }
-
-    &:not(:last-child) {
-      margin-right: 0.5rem;
-    }
-  }
-
-  .boxText {
-    z-index: 99999; // Pastikan teks berada di atas semua elemen lainnya
-    background: linear-gradient(to right, #e96cf3, #8746eb);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-
-    @include md {
-      @include typography('display-3xl', 'bold');
-    }
-  }
-}
-
 .hero {
   position: relative;
   display: flex;
@@ -113,11 +5,12 @@
   align-items: center;
   justify-content: center;
   text-align: center;
+
   padding: get-spacing('spacing-5xl') get-spacing('spacing-2xl');
   @include typography('display-xl', 'bold');
 
   @include md {
-    padding: rem-calc(222) rem-calc(229);
+    padding: rem-calc(130) rem-calc(130);
     padding-bottom: rem-calc(420);
   }
 
@@ -233,5 +126,114 @@
     background-size: 16%;
     opacity: 0.8;
     background-position: bottom center;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: get-spacing('spacing-2xl');
+  
+    &::before {
+      content: '';
+      background-image: url('../../assets/header-ellipse-decoration.svg');
+      position: absolute;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: rem-calc(1190);
+      height: rem-calc(1624);
+      transform: translateX(46%);
+      top: rem-calc(-125);
+    }
+  
+    .highlight {
+      .box {
+        display: inline-block;
+        padding: 0.25rem 0.5rem;
+        margin: 0.25rem 0;
+        @include typography('display-xl', 'bold');
+        color: get-color('neutral', 100); // Warna teks tetap terlihat
+        border-radius: 8px;
+        text-align: center;
+        position: relative;
+        z-index: 1; // Pastikan teks berada di atas elemen lainnya
+    
+        // Border gradien tanpa latar belakang
+        border: 2px solid transparent; // Border default
+        border-image: linear-gradient(to right, #e96cf3, #8746eb) 1; // Border gradien
+    
+        background-origin: border-box;
+        background-clip: border-box; // Gradien hanya pada border
+        background-color: transparent; // Latar belakang tetap transparan
+    
+        // Kotak kecil di pojok kiri atas
+        &::before, // Kotak kiri atas
+        &::after, // Kotak kanan bawah
+        .corner-top-left, // Kotak kanan atas
+        .corner-bottom-left, // Kotak kiri bawah
+        .corner-top-right, // Kotak kanan atas
+        .corner-bottom-right {
+          // Kotak kanan bawah
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: white; // Warna kotak kecil
+          border-radius: 4px; // Agar kotaknya melengkung
+          z-index: -1; // Kotak kecil berada di belakang teks
+        }
+    
+        // Kotak kiri atas
+        &::before {
+          top: -5px;
+          left: -5px;
+        }
+    
+        // Kotak kanan bawah
+        &::after {
+          bottom: -5px;
+          right: -5px;
+        }
+    
+        .cornerTopRight,
+        .cornerBottomLeft {
+          content: '';
+          position: absolute;
+          width: 10px;
+          height: 10px;
+          background-color: white;
+          border-radius: 4px;
+        }
+    
+        // Pojok kanan atas
+        .cornerTopRight {
+          top: -5px;
+          right: -5px;
+        }
+    
+        // Pojok kiri bawah
+        .cornerBottomLeft {
+          bottom: -5px;
+          left: -5px;
+        }
+    
+        &:not(:last-child) {
+          margin-right: 0.5rem;
+        }
+      }
+    
+      .boxText {
+        z-index: 99999; // Pastikan teks berada di atas semua elemen lainnya
+        background: linear-gradient(to right, #e96cf3, #8746eb);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    
+        @include md {
+          @include typography('display-3xl', 'bold');
+        }
+      }
+    }
   }
 }

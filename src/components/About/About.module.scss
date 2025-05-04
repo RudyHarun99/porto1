@@ -1,6 +1,9 @@
 .about {
   position: relative;
   overflow: hidden;
+  padding: get-spacing('spacing-8xl') get-spacing('spacing-11xl');
+  gap: get-spacing('spacing-8xl');
+
 
   @include md {
     margin-top: rem-calc(-300);
